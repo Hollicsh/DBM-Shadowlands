@@ -486,7 +486,7 @@ function mod:SPELL_AURA_APPLIED(args)
 			yellWickedStar:Yell(icon, icon)
 			yellWickedStarFades:Countdown(spellId, nil, icon)
 --		else
---			local uId = DBM:GetRaidUnitId(args.destName)
+--			local uId = DBM:GetRaidUnitId(args.destName, true)
 --			if self:IsTanking(uId) then
 --				specWarnWickedStarTaunt:Show(args.destName)
 --				specWarnWickedStarTaunt:Play("tauntboss")

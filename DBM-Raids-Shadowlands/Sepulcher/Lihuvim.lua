@@ -328,7 +328,7 @@ function mod:SPELL_AURA_APPLIED(args)
 				yellDeconstructingEnergyFades:Countdown(spellId, nil, icon)
 			end
 		else
-			local uId = DBM:GetRaidUnitId(args.destName)
+			local uId = DBM:GetRaidUnitId(args.destName, true)
 			if self:IsTanking(uId) then
 				specWarnDeconstructingEnergyTaunt:Show(args.destName)
 				specWarnDeconstructingEnergyTaunt:Play("tauntboss")
@@ -342,7 +342,7 @@ function mod:SPELL_AURA_APPLIED(args)
 	elseif spellId == 363130 then
 		timerSynthesize:Start(self:IsMythic() and 15 or 20)
 	elseif spellId == 368024 then--Kinetic Resonance
-		local uId = DBM:GetRaidUnitId(args.destName)
+		local uId = DBM:GetRaidUnitId(args.destName, true)
 		if self:IsTanking(uId) then
 			warnKineticResonance:Show(args.destName, args.amount or 1)
 		end
@@ -351,7 +351,7 @@ function mod:SPELL_AURA_APPLIED(args)
 			specWarnKinResonanceTaunt:Play("tauntboss")
 		end
 	elseif spellId == 368025 then--Sundering Resonance
-		local uId = DBM:GetRaidUnitId(args.destName)
+		local uId = DBM:GetRaidUnitId(args.destName, true)
 		if self:IsTanking(uId) then
 			warnSunderingResonance:Show(args.destName, args.amount or 1)
 		end

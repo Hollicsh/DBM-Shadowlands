@@ -725,7 +725,7 @@ function mod:SPELL_AURA_APPLIED(args)
 	local spellId = args.spellId
 	if spellId == 360687 then
 		local icon = 0
-		local uId = DBM:GetRaidUnitId(args.destName)
+		local uId = DBM:GetRaidUnitId(args.destName, true)
 		for i = 1, 4 do--Only up to 4 icons
 			if not deathtouchTargets[i] then--Not yet assigned!
 				icon = i

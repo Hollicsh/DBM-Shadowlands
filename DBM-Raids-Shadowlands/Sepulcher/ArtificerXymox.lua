@@ -486,7 +486,7 @@ function mod:SPELL_AURA_APPLIED(args)
 			DBM.Nameplate:Show(true, args.sourceGUID, spellId)
 		end
 	elseif spellId == 365681 then
-		local uId = DBM:GetRaidUnitId(args.destName)
+		local uId = DBM:GetRaidUnitId(args.destName, true)
 		if self:IsTanking(uId) then
 			local amount = args.amount or 1
 			if amount >= 2 then

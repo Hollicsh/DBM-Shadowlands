@@ -310,7 +310,7 @@ function mod:SPELL_AURA_APPLIED(args)
 			table.insert(GluttonousTargets, args.destName)
 		end
 		local icon
-		local uId = DBM:GetRaidUnitId(args.destName)
+		local uId = DBM:GetRaidUnitId(args.destName, true)
 		if self:IsMelee(uId) and not self.vb.meleeFound then
 			icon = 1
 			self.vb.meleeFound = true--Some sets can have more than 1 melee, this makes sure star isn't assigned to multiple

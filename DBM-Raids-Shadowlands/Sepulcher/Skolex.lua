@@ -165,13 +165,13 @@ function mod:SPELL_AURA_APPLIED(args)
 			DBM.InfoFrame:UpdateTable(EphemeraDustStacks, 0.2)
 		end
 	elseif spellId == 359976 then--Riftmaw
-		local uId = DBM:GetRaidUnitId(args.destName)
+		local uId = DBM:GetRaidUnitId(args.destName, true)
 		if self:IsTanking(uId) then
 			local amount = args.amount or 1
 			warnRift:Show(args.destName, amount)
 		end
 	elseif spellId == 359981 then
-		local uId = DBM:GetRaidUnitId(args.destName)
+		local uId = DBM:GetRaidUnitId(args.destName, true)
 		if self:IsTanking(uId) then
 			local amount = args.amount or 1
 			warnRend:Show(args.destName, amount)

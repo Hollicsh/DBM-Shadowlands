@@ -234,7 +234,7 @@ function mod:SPELL_AURA_APPLIED(args)
 			warnDeresolution:Show(args.destName)
 		end
 	elseif spellId == 360415 or spellId == 360414 then
-		local uId = DBM:GetRaidUnitId(args.destName)
+		local uId = DBM:GetRaidUnitId(args.destName, true)
 		if self:IsTanking(uId) then
 			if args:IsPlayer() then
 				specWarnPneumaticImpact:Cancel()

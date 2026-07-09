@@ -273,7 +273,7 @@ function mod:SPELL_AURA_APPLIED(args)
 			DBM.Nameplate:Show(true, args.sourceGUID, spellId)
 		end
 	elseif spellId == 359963 then
-		local uId = DBM:GetRaidUnitId(args.destName)
+		local uId = DBM:GetRaidUnitId(args.destName, true)
 		if self:IsTanking(uId) then--If not on a tank, it's just some numpty in wrong place
 			if not args:IsPlayer() then
 				local _, _, _, _, _, expireTime = DBM:UnitDebuff("player", spellId)
@@ -356,7 +356,7 @@ function mod:SPELL_AURA_APPLIED(args)
 		self.vb.auraofShadowsOn = true
 		warnAuraofShadows:Show()
 	elseif spellId == 360287 then
-		local uId = DBM:GetRaidUnitId(args.destName)
+		local uId = DBM:GetRaidUnitId(args.destName, true)
 		if self:IsTanking(uId) then--If not on a tank, it's just some numpty in wrong place
 			local amount = args.amount or 1
 			if args:IsPlayer() and amount >= 3 then

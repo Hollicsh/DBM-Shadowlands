@@ -377,7 +377,7 @@ function mod:SPELL_AURA_APPLIED(args)
 	elseif spellId == 350542 then
 		local amount = args.amount or 1
 		local icon = 0
-		local uId = DBM:GetRaidUnitId(args.destName)
+		local uId = DBM:GetRaidUnitId(args.destName, true)
 		for i = 1, 8 do--Only up to 8 icons
 			if not fragmentTargets[i] then--Not yet assigned!
 				icon = i

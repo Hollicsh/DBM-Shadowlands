@@ -180,7 +180,7 @@ function mod:SPELL_AURA_APPLIED(args)
 				specWarnExsanguinated:Play("stackhigh")
 			end
 		else
-			local uId = DBM:GetRaidUnitId(args.destName)
+			local uId = DBM:GetRaidUnitId(args.destName, true)
 			if self:IsTanking(uId) then
 				warnExsanguinated:Show(args.destName, amount)
 			end

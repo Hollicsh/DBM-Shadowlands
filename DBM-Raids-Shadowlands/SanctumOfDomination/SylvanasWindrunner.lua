@@ -796,7 +796,7 @@ function mod:SPELL_AURA_APPLIED(args)
 			yellWailingArrow:Yell(icon, icon)
 			yellWailingArrowFades:Countdown(spellId, nil, icon)
 		else
-			local uId = DBM:GetRaidUnitId(args.destName)
+			local uId = DBM:GetRaidUnitId(args.destName, true)
 			if self:IsTanking(uId) then
 				specWarnWailingArrowTaunt:Show(args.destName)
 				specWarnWailingArrowTaunt:Play("tauntboss")
@@ -819,7 +819,7 @@ function mod:SPELL_AURA_APPLIED(args)
 			yellBlackArrow:Yell(icon, icon)
 			yellBlackArrowFades:Countdown(spellId, nil, icon)
 		else
-			local uId = DBM:GetRaidUnitId(args.destName)
+			local uId = DBM:GetRaidUnitId(args.destName, true)
 			if self:IsTanking(uId) then
 				specWarnBlackArrowTaunt:Show(args.destName)
 				specWarnBlackArrowTaunt:Play("tauntboss")
@@ -937,7 +937,7 @@ function mod:SPELL_AURA_APPLIED(args)
 			specWarnFilth:Show()
 			specWarnFilth:Play("targetyou")
 		else
-			local uId = DBM:GetRaidUnitId(args.destName)
+			local uId = DBM:GetRaidUnitId(args.destName, true)
 			if self:IsTanking(uId) then
 				specWarnFilthTaunt:Show(args.destName)
 				specWarnFilthTaunt:Play("tauntboss")

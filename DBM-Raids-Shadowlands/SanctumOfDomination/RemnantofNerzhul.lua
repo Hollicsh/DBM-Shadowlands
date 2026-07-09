@@ -449,7 +449,7 @@ function mod:SPELL_AURA_APPLIED(args)
 			specWarnSuffering:Show()
 			specWarnSuffering:Play("targetyou")
 		else
-			local uId = DBM:GetRaidUnitId(args.destName)
+			local uId = DBM:GetRaidUnitId(args.destName, true)
 			if self:IsTanking(uId) then
 				specWarnSufferingSwap:Show(args.destName)
 				specWarnSufferingSwap:Play("tauntboss")

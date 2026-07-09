@@ -518,13 +518,13 @@ function mod:SPELL_AURA_APPLIED(args)
 			playerSafe = true
 		end
 	elseif spellId == 350734 then
-		local uId = DBM:GetRaidUnitId(args.destName)
+		local uId = DBM:GetRaidUnitId(args.destName, true)
 		if self:IsTanking(uId) and not args:IsPlayer() then
 			specWarnObliterate:Show(args.destName)
 			specWarnObliterate:Play("tauntboss")
 		end
 	elseif spellId == 350732 then
-		local uId = DBM:GetRaidUnitId(args.destName)
+		local uId = DBM:GetRaidUnitId(args.destName, true)
 		if self:IsTanking(uId) and not args:IsPlayer() and self.vb.comboCount == 2 then--Obviously normal/LFR
 			specWarnSunderTaunt:Show(args.destName)
 			specWarnSunderTaunt:Play("tauntboss")

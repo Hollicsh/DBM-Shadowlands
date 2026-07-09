@@ -625,7 +625,7 @@ end
 function mod:SPELL_AURA_APPLIED(args)
 	local spellId = args.spellId
 	if spellId == 362192 then
-		local uId = DBM:GetRaidUnitId(args.destName)
+		local uId = DBM:GetRaidUnitId(args.destName, true)
 		if self:IsTanking(uId) and not args:IsPlayer() and not DBM:UnitDebuff("player", spellId) then
 			specWarnMisery:Show(args.destName)
 			specWarnMisery:Play("tauntboss")
@@ -748,7 +748,7 @@ function mod:SPELL_AURA_APPLIED(args)
 		--self:Unschedule(mythicTimerLoop)
 		--mythicTimerLoop(self)
 	elseif spellId == 360378 then
-		local uId = DBM:GetRaidUnitId(args.destName)
+		local uId = DBM:GetRaidUnitId(args.destName, true)
 		if self:IsTanking(uId) and not args:IsPlayer() and not DBM:UnitDebuff("player", spellId) then
 			specWarnMeteorCleaveTaunt:Show(args.destName)
 			specWarnMeteorCleaveTaunt:Play("tauntboss")
