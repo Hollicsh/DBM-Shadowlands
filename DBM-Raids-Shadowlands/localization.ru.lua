@@ -84,7 +84,7 @@ L:SetMiscLocalization({
 L = DBM:GetModLocalization("CastleNathriaTrash")
 
 L:SetGeneralLocalization({
-	name =	"Трэш мобы Замок Нафрия"
+	name =	"Трэш: Замок Нафрия"
 })
 
 ---------------------------
@@ -180,7 +180,7 @@ L:SetMiscLocalization({
 L = DBM:GetModLocalization("SanctumofDomTrash")
 
 L:SetGeneralLocalization({
-	name =	"Трэш мобы Святилище Господства"
+	name =	"Трэш: Святилище Господства"
 })
 
 ---------------------------
@@ -304,7 +304,7 @@ L:SetMiscLocalization({
 L = DBM:GetModLocalization("SepulcherTrash")
 
 L:SetGeneralLocalization({
-	name =	"Трэш мобы Гробница Предвечных"
+	name =	"Трэш: Гробница Предвечных"
 })
 
 -----------------------
